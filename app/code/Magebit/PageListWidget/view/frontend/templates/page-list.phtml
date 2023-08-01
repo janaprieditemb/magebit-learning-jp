@@ -1,0 +1,38 @@
+<?php
+/**
+ * This file is part of the Magebit package.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magebit Faq
+ * to newer versions in the future.
+ *
+ * @copyright Copyright (c) 2022 Magebit, Ltd. (https://magebit.com/)
+ * @license   GNU General Public License ("GPL") v3.0
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/** @var $block Magebit\PageListWidget\Block\Widget\PageList */
+
+$_pages = $block->getPagesList();
+
+if(count($_pages)): ?>
+<div class="mb-pages-list wrapper">
+    <h3 class="mb-pages-list title">
+        <?= /* @escapeNotVerified */ $block->getTitle(); ?>
+    </h3>
+    <div class="mb-pages-list pages-container">
+        <ul class="pages-list">
+            <?php foreach ($_pages as $_page): ?>
+                <li class="mb-page-link">
+                    <a href="<?= /* @escapeNotVerified */ $_page['url']; ?>">
+                        <?= /* @escapeNotVerified */ $_page['title']; ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>
