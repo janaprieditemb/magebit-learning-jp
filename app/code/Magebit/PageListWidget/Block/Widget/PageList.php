@@ -7,7 +7,7 @@
  * Do not edit or add to this file if you wish to upgrade Magebit Faq
  * to newer versions in the future.
  *
- * @copyright Copyright (c) 2022 Magebit, Ltd. (https://magebit.com/)
+ * @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
  * @license   GNU General Public License ("GPL") v3.0
  *
  * For the full copyright and license information, please view the LICENSE
@@ -47,31 +47,37 @@ class PageList extends Template implements BlockInterface {
      */
     const DISPLAY_MODE_SPECIFIC_PAGES = 'specific_pages';
 
-    /**
-     * @var PagesOptions
-     */
-    private $pagesOptions;
+    private PagesOptions $pagesOptions;
 
     /**
      * @var PageFactory
      */
-    private $pageFactory;
+    private PageFactory $pageFactory;
 
     /**
      * @var StoreManagerInterface
      */
-    private $storeManager;
+    private StoreManagerInterface $storeManager;
 
     /**
      * @var UrlInterface
      */
-    private $urlBuilder;
+    private UrlInterface $urlBuilder;
 
     /**
      * @var LoggerInterface
      */
-    private $logger;
+    private LoggerInterface $logger;
 
+    /**
+     * @param Context $context
+     * @param PagesOptions $pagesOptions
+     * @param PageFactory $pageFactory
+     * @param StoreManagerInterface $storeManager
+     * @param UrlInterface $urlBuilder
+     * @param LoggerInterface $logger
+     * @param array $data
+     */
     public function __construct(
         Context $context,
         PagesOptions $pagesOptions,

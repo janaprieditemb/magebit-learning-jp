@@ -7,7 +7,7 @@
  * Do not edit or add to this file if you wish to upgrade Magebit Faq
  * to newer versions in the future.
  *
- * @copyright Copyright (c) 2022 Magebit, Ltd. (https://magebit.com/)
+ * @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
  * @license   GNU General Public License ("GPL") v3.0
  *
  * For the full copyright and license information, please view the LICENSE
@@ -16,6 +16,7 @@
 
 namespace Magebit\PageListWidget\Model\Config\Source;
 
+use Magento\Cms\Api\Data\PageInterface;
 use Magento\Cms\Api\PageRepositoryInterface;
 use Magento\Framework\Api\SearchCriteriaBuilder;
 use Magento\Framework\Data\OptionSourceInterface;
@@ -32,18 +33,23 @@ class PagesOptions implements OptionSourceInterface {
     /**
      * @var PageRepositoryInterface
      */
-    private $pageRepository;
+    private PageRepositoryInterface $pageRepository;
 
     /**
      * @var SearchCriteriaBuilder
      */
-    private $seachCriteriaBuilder;
+    private SearchCriteriaBuilder $seachCriteriaBuilder;
 
     /**
      * @var LoggerInterface
      */
-    private $logger;
+    private LoggerInterface $logger;
 
+    /**
+     * @param PageRepositoryInterface $pageRepository
+     * @param SearchCriteriaBuilder $searchCriteriaBuilder
+     * @param LoggerInterface $logger
+     */
     public function __construct(
         PageRepositoryInterface $pageRepository,
         SearchCriteriaBuilder $searchCriteriaBuilder,
@@ -78,7 +84,7 @@ class PagesOptions implements OptionSourceInterface {
     /**
      * Returns list of CMS pages
      *
-     * @return \Magento\Cms\Api\Data\PageInterface[]
+     * @return PageInterface[]
      */
     public function getPagesList(): array
     {
