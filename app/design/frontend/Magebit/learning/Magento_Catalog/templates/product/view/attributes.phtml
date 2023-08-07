@@ -1,0 +1,62 @@
+<?php
+/**
+ * This file is part of the Magebit package.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magebit Faq
+ * to newer versions in the future.
+ *
+ * @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
+ * @license   GNU General Public License ("GPL") v3.0
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ *
+ * // phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+ *
+ * Product additional attributes template
+ *
+ */
+
+use Magento\Catalog\Block\Product\View\Attributes;
+use Magento\Catalog\Helper\Output;
+
+/**
+ * @var Attributes $block
+ */
+
+$_helper = $this->helper(Output::class);
+$_product = $block->getProduct();
+$_codes = ['dimensions', 'colour', 'material'];
+$_count = 0;
+
+if ($_additional = $block->getAdditionalData()): ?>
+    <div class="additional-attributes-wrapper list-wrapper">
+        <ul class="data list additional-attributes" id="product-attribute-specs-table">
+            <?php foreach ($_additional as $key => $_data):
+                if (in_array($_data['code'], $_codes)): ?>
+                    <li>
+                        <span class="label">
+                            <?= $block->escapeHtml($_data['label']) ?>
+                        :</span>
+                        <span class="data" data-th="<?= $block->escapeHtml($_data['label']) ?>">
+                            <?= /* @noEscape */ $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?>
+                        </span>
+                    </li>
+                    <?php unset($_additional[$key]);
+                    $_count++;
+                endif;
+            endforeach;
+            if($_count < count($_codes)):
+                foreach ($_additional as $_data): ?>
+                    <li>
+                        <span class="label"><?= $block->escapeHtml($_data['label']) ?>:</span>
+                        <span class="data"><?= /* @noEscape */ $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></span>
+                    </li>
+                <?php endforeach;
+            endif; ?>
+        </ul>
+    </div>
+<?php endif;?>

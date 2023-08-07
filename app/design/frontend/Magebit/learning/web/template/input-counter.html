@@ -1,4 +1,4 @@
-<?php
+<!--
 /**
  *  This file is part of the Magebit package.
  *
@@ -14,10 +14,17 @@
  *  file that was distributed with this source code.
  *
  */
-
-use \Magento\Framework\Component\ComponentRegistrar;
-
-ComponentRegistrar::register(
-    ComponentRegistrar::THEME,
-    'frontend/Magebit/learning',
-    __DIR__);
+-->
+<label class="label" for="qty"><span>Qty</span></label>
+<div class="control">
+    <button class="change-qty remove btn" data-bind="click: remove">-</button>
+    <input data-bind="value: qty()"
+           type="number"
+           name="qty"
+           id="qty"
+           min="0"
+           title="Qty"
+           class="input-text qty"
+    />
+    <button class="change-qty add btn" data-bind="click: add">+</button>
+</div>
