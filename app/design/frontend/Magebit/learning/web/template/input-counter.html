@@ -1,0 +1,30 @@
+<!--
+/**
+ *  This file is part of the Magebit package.
+ *
+ *  DISCLAIMER
+ *
+ *  Do not edit or add to this file if you wish to upgrade Magebit Faq
+ *  to newer versions in the future.
+ *
+ * @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
+ * @license   GNU General Public License ("GPL") v3.0
+ *
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
+ *
+ */
+-->
+<label class="label" for="qty"><span>Qty</span></label>
+<div class="control">
+    <button class="change-qty remove btn" data-bind="click: remove">-</button>
+    <input data-bind="value: qty()"
+           type="number"
+           name="qty"
+           id="qty"
+           min="0"
+           title="Qty"
+           class="input-text qty"
+    />
+    <button class="change-qty add btn" data-bind="click: add">+</button>
+</div>

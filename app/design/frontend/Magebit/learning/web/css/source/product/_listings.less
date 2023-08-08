@@ -1,0 +1,209 @@
+//
+//  This file is part of the Magebit package.
+//
+//  DISCLAIMER
+//
+//  Do not edit or add to this file if you wish to upgrade Magebit Faq
+//  to newer versions in the future.
+//
+//  @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
+//  @license   GNU General Public License ("GPL") v3.0
+//
+//  For the full copyright and license information, please view the LICENSE
+//  file that was distributed with this source code.
+//
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    //
+    //  Upsell Products widget
+    //
+
+    .block.upsell {
+        .block-title {
+            padding-bottom: 10px;
+            border-bottom: 1px solid @simple-pdp-border-color;
+
+            .block-upsell-heading {
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: bold;
+            }
+        }
+
+        .product-items.list {
+            width: 100%;
+
+            .product-item {
+                width: 100%;
+                line-height: 0;
+            }
+
+            .product-item-info {
+                width: 100%;
+
+                .product-item-photo {
+                    display: inline-block;
+                    width: 100%;
+                    max-width: 104px;
+                    max-height: 110px;
+
+                    .product-image-container {
+                        width: 88px !important;
+                    }
+                }
+
+                .product-item-details {
+                    display: flex;
+                    width: 100%;
+                    max-width: calc(~'100% - 104px');
+                    float: right;
+
+                    .product-details-wrapper {
+                        display: inline-block;
+                        width: 100%;
+                        max-width: calc(~'100% - 118px');
+                    }
+
+                    .product-item-name {
+                        margin: 0 0 4px;
+
+                        .product-item-link {
+                            font-size: 16px;
+                            font-weight: 600;
+                            line-height: 22px;
+                        }
+                    }
+
+                    .price-box {
+                        margin: 10px 0 18px;
+
+                        .price-container .price {
+                            font-size: 18px;
+                            font-weight: 600;
+                            line-height: 24px;
+                        }
+                    }
+
+                    .product-reviews-summary {
+                        float: none;
+                    }
+
+                    .product-view-action {
+                        display: inline-block;
+                        margin: auto 0 auto 8px;
+                        max-width: 110px;
+                        width: 100%;
+                        float: right;
+
+                        .product-item-link {
+                            display: block;
+                            font-size: 14px;
+                            font-weight: 600;
+                            color: @color-white;
+                            line-height: 20px;
+                            padding: 6px 10px;
+                            box-sizing: border-box;
+                            border-radius: 2px;
+                            background: @simple-pdp-color-dark-grey;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //
+    //  Related Products widget
+    //
+
+    .block.related {
+        .block-title {
+            padding-bottom: 20px;
+            border-bottom: 1px solid @simple-pdp-border-color;
+
+            strong {
+                font-size: 24px;
+                line-height: 33px;
+                font-weight: bold;
+            }
+        }
+
+        .product-items.list {
+
+            .product-item {
+                max-width: 224px;
+                width: 100%;
+                margin-right: 30px;
+                transition: all .3s ease-in-out;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    box-shadow: 0px 0px 8px #00000029;
+                }
+
+                .product-item-info {
+                    width: auto;
+                    border: none;
+
+                    &:hover {
+                        padding: 0;
+                        margin: 0;
+                        box-shadow: none;
+                        border: none;
+                    }
+
+                    .product-item-details {
+                        margin: 10px;
+
+                        .product-item-name {
+                            margin: 0 0 4px;
+
+                            .product-item-link {
+                                font-size: 16px;
+                                font-weight: 600;
+                                line-height: 22px;
+                            }
+                        }
+                    }
+
+                    .price-box {
+                        margin: 0 0 10px;
+
+                        .price-container .price {
+                            font-size: 22px;
+                            font-weight: 600;
+                            line-height: 30px;
+                        }
+                    }
+
+                    .product-reviews-summary {
+                        margin-bottom: 10px;
+                    }
+
+                    .product-item-actions {
+                        margin: 0;
+
+                        .actions-primary {
+                            width: 100%;
+
+                            .action.tocart {
+                                width: 100%;
+                                background: @simple-pdp-color-orange;
+                                border: none;
+                                padding-top: 14px;
+                                padding-bottom: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
