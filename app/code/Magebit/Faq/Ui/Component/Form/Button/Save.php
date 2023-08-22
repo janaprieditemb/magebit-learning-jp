@@ -25,10 +25,6 @@ use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 /**
  * Save button configuration provider
  */
-
-/**
- * Question grid save button
- */
 class Save implements ButtonProviderInterface
 {
     /**

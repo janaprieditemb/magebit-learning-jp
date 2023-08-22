@@ -26,10 +26,19 @@ use Magento\Framework\Exception\AlreadyExistsException;
  */
 class QuestionManagement implements QuestionManagementInterface
 {
-    CONST STATUS_ENABLED = 1;
+    /**
+     * Question enabled status value
+     */
+    const STATUS_ENABLED = 1;
 
-    CONST STATUS_DISABLED = 0;
+    /**
+     * Question disabled status value
+     */
+    const STATUS_DISABLED = 0;
 
+    /**
+     * @param QuestionRepository $questionRepository
+     */
     public function __construct(
         private readonly QuestionRepository $questionRepository
     )

@@ -34,6 +34,13 @@ use Magento\Framework\Exception\NoSuchEntityException;
  */
 class QuestionRepository implements QuestionRepositoryInterface
 {
+    /**
+     * @param QuestionResource $questionResource
+     * @param QuestionInterfaceFactory $questionFactory
+     * @param QuestionSearchResultsInterfaceFactory $searchResultFactory
+     * @param CollectionProcessorInterface $collectionProcessor
+     * @param QuestionCollectionFactory $questionCollectionFactory
+     */
     public function __construct(
         private readonly QuestionResource $questionResource,
         private readonly QuestionInterfaceFactory $questionFactory,

@@ -24,13 +24,15 @@ namespace Magebit\Faq\Api\Data;
  */
 interface QuestionInterface
 {
-    PUBLIC CONST ID = 'id';
-    PUBLIC CONST QUESTION = 'question';
-    PUBLIC CONST ANSWER = 'answer';
-    PUBLIC CONST STATUS = 'status';
-    PUBLIC CONST POSITION = 'position';
-    PUBLIC CONST UPDATED_AT = 'updated_at';
-
+    /**
+     * Question fields
+     */
+    public const ID = 'id';
+    public const QUESTION = 'question';
+    public const ANSWER = 'answer';
+    public const STATUS = 'status';
+    public const POSITION = 'position';
+    public const UPDATED_AT = 'updated_at';
 
     /**
      * Get question id

@@ -29,6 +29,9 @@ use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\Result\Json;
 use Magento\Framework\Controller\ResultInterface;
 
+/**
+ * Question grid inline edit controller
+ */
 class InlineEdit extends Action implements HttpPostActionInterface
 {
     /**
@@ -38,6 +41,12 @@ class InlineEdit extends Action implements HttpPostActionInterface
      */
     const ADMIN_RESOURCE = 'Magebit_Faq::save';
 
+    /**
+     * @param Context $context
+     * @param PostDataProcessor $postDataProcessor
+     * @param QuestionRepositoryInterface $questionRepository
+     * @param JsonFactory $jsonFactory
+     */
     public function __construct(
         Context $context,
         private readonly PostDataProcessor $postDataProcessor,

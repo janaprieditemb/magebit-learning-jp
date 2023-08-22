@@ -1,4 +1,18 @@
 <?php
+/**
+ * This file is part of the Magebit package.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magebit Faq
+ * to newer versions in the future.
+ *
+ * @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
+ * @license   GNU General Public License ("GPL") v3.0
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace Magebit\Faq\Model\Question;
 
@@ -6,7 +20,9 @@ use Magebit\Faq\Model\Question;
 use Magento\Ui\DataProvider\AbstractDataProvider;
 use Magebit\Faq\Model\ResourceModel\Question\CollectionFactory;
 
-
+/**
+ * DataProvider for question creation form
+ */
 class DataProvider extends AbstractDataProvider
 {
     /**
@@ -35,6 +51,8 @@ class DataProvider extends AbstractDataProvider
     }
 
     /**
+     * Get question data
+     *
      * @return array|null
      */
     public function getData(): ?array

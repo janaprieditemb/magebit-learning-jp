@@ -24,12 +24,16 @@ namespace Magebit\Faq\Api;
 interface QuestionManagementInterface
 {
     /**
+     * Enable question by id
+     *
      * @param $questionId
      * @return void
      */
     public function enableQuestion($questionId): void;
 
     /**
+     * Disable question by id
+     *
      * @param $questionId
      * @return void
      */

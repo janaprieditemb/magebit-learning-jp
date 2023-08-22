@@ -20,6 +20,9 @@ use Magento\Framework\Model\AbstractModel;
 use Magebit\Faq\Api\Data\QuestionInterface;
 use Magebit\Faq\Model\ResourceModel\Question as ResourceModel;
 
+/**
+ * Question model implementation
+ */
 class Question extends AbstractModel implements QuestionInterface
 {
     /**
