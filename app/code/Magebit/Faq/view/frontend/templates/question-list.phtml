@@ -1,0 +1,40 @@
+<?php
+/**
+ * This file is part of the Magebit package.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magebit Faq
+ * to newer versions in the future.
+ *
+ * @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
+ * @license   GNU General Public License ("GPL") v3.0
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+use Magebit\Faq\Block\QuestionList;
+
+/** @var QuestionList $block */
+$_questions = $block->getQuestionList();
+?>
+<div class="faq-question-wrapper">
+    <div id="accordion" data-mage-init='{
+        "accordion":{
+            "collapsible": true,
+            "multipleCollapsible": true
+        }}'>
+        <?php foreach ($_questions as $_question): ?>
+            <div class="faq-element question" data-role="collapsible">
+                <div data-role="trigger">
+                    <h4><?= $_question->getQuestion(); ?></h4>
+                </div>
+            </div>
+            <div class="faq-element answer" data-role="content">
+                <?= $_question->getAnswer(); ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
