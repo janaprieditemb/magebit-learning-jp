@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+    /**
+     * This file is part of the Magebit package.
+     *
+     * DISCLAIMER
+     *
+     * Do not edit or add to this file if you wish to upgrade Magebit Faq
+     * to newer versions in the future.
+     *
+     * @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
+     * @license   GNU General Public License ("GPL") v3.0
+     *
+     * For the full copyright and license information, please view the LICENSE
+     * file that was distributed with this source code.
+     */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="question_entity" resource="default" engine="innodb" comment="FAQ Question entries">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column xsi:type="text" name="question" nullable="false" comment="Question"/>
+        <column xsi:type="text" name="answer" nullable="false" comment="Question"/>
+        <column xsi:type="smallint" name="status" default="0" nullable="false" comment="Status"/>
+        <column xsi:type="int" name="position" default="0" nullable="false" comment="Position"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="QUESTION_ENTITY_QUESTION_ANSWER" indexType="fulltext">
+            <column name="question" />
+            <column name="answer" />
+        </index>
+    </table>
+</schema>
