@@ -13,6 +13,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+declare(strict_types=1);
 
 namespace Magebit\Faq\Model;
 
@@ -94,8 +95,8 @@ class QuestionRepository implements QuestionRepositoryInterface
         $searchResults->setSearchCriteria($searchCriteria);
         $searchResults->setItems($collection->getItems());
         $searchResults->setTotalCount($collection->getSize());
-        return $searchResults;
 
+        return $searchResults;
     }
 
     /**

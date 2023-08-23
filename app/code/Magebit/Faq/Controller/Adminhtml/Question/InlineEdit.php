@@ -13,6 +13,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+declare(strict_types=1);
 
 namespace Magebit\Faq\Controller\Adminhtml\Question;
 
@@ -93,7 +94,7 @@ class InlineEdit extends Action implements HttpPostActionInterface
             } catch (\Exception $e) {
                 $messages[] = $this->getErrorWithQuestionId(
                     $question,
-                    __('Something went wrong while saving the page.')
+                    __('Something went wrong while saving the question.')
                 );
                 $error = true;
             }

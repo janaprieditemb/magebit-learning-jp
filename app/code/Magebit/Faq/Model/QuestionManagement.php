@@ -13,6 +13,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+declare(strict_types=1);
 
 namespace Magebit\Faq\Model;
 
@@ -57,7 +58,7 @@ class QuestionManagement implements QuestionManagementInterface
         /** @var Question $question */
         $question = $this->questionRepository->getById($questionId);
 
-        if($question->getStatus() !== self::STATUS_ENABLED)
+        if ($question->getStatus() !== self::STATUS_ENABLED)
         {
             $question->setStatus(self::STATUS_ENABLED);
         }
@@ -77,7 +78,7 @@ class QuestionManagement implements QuestionManagementInterface
         /** @var Question $question */
         $question = $this->questionRepository->getById($questionId);
 
-        if($question->getStatus() !== self::STATUS_DISABLED)
+        if ($question->getStatus() !== self::STATUS_DISABLED)
         {
             $question->setStatus(self::STATUS_DISABLED);
         }
